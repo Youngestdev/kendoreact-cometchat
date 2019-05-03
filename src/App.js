@@ -1,26 +1,91 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom';
+import { Chat } from '@progress/kendo-react-conversational-ui';
+import '@progress/kendo-theme-material/dist/all.css';
+import CometChat from '@cometchat-pro/chat'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.user = {
+            id: 1,
+            avatarUrl: "https://via.placeholder.com/24/008000/008000.png"
+        };
+        this.bot = { id: 0 };
+        this.state = {
+            messages: [
+                {
+                    author: this.bot,
+                    suggestedActions: [
+                        {
+                            type: 'reply',
+                            value: 'Oh, really?'
+                        }, {
+                            type: 'reply',
+                            value: 'Thanks, but this is boring.'
+                        }
+                    ],
+                    timestamp: new Date(),
+                    text: "Hello, this is a demo bot. I don't do much, but I can count symbols!"
+                }
+            ]
+        };
+    }
+
+    componentDidMount() {
+      CometChat.init("test").then(
+      () => {
+        console.log("Initialization completed successfully.");
+      },
+      error => {
+        console.log("Initialization failed with error", error);
+      }
+      );
+    }
+
+    addNewMessage = (event) => {
+        let botResponce = Object.assign({}, event.message);
+        botResponce.text = this.countReplayLength(event.message.text);
+        botResponce.author = this.bot;
+        this.setState((prevState) => ({
+            messages: [
+                ...prevState.messages,
+                event.message
+            ]
+        }));
+        setTimeout(() => {
+            this.setState(prevState => ({
+                messages: [
+                    ...prevState.messages,
+                    botResponce
+                ]
+            }));
+        }, 1000);
+    };
+
+    countReplayLength = (question) => {
+        let length = question.length;
+        let answer = question + " contains exactly " + length + " symbols.";
+        return answer;
+    }
+
+    render() {
+        return (
+            <div>
+                <Chat user={this.user}
+                    messages={this.state.messages}
+                    onMessageSend={this.addNewMessage}
+                    placeholder={"Type a message..."}
+                    width={400}>
+                </Chat>
+            </div>
+        );
+    }
 }
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
 
 export default App;

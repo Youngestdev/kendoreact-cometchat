@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cometchat-pro/chat": "^1.4.0",
+    "@progress/kendo-react-buttons": "^2.10.0",
+    "@progress/kendo-react-conversational-ui": "^2.10.0",
+    "@progress/kendo-react-intl": "^2.10.0",
+    "@progress/kendo-theme-material": "^2.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
