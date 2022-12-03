@@ -1007,6 +1007,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@cometchat-pro/chat@^1.4.0":
+  version "1.8.15"
+  resolved "https://registry.yarnpkg.com/@cometchat-pro/chat/-/chat-1.8.15.tgz#c085919143cdce8c05ecf07aecb787e020885d07"
+  integrity sha512-TH8VgDAmbKtO49hiGaniA2h5IxcBsaXilapjt98c/PxuVR1bxkmVaXLLDabJ6lBXMKJ2RMqQ2S/ZY10jzbplbQ==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -1255,6 +1260,11 @@
     "@progress/kendo-react-animation" "2.10.0"
     "@progress/kendo-react-common" "2.10.0"
     prop-types "^15.6.0"
+
+"@progress/kendo-theme-material@^2.4.1":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-theme-material/-/kendo-theme-material-2.5.2.tgz#3d6ab650073abc9876fa9daaecc6b09c883a4c1f"
+  integrity sha512-GoSnPSzpQ+aDh+jIF0lvhKASdActC9WuvZMMPSZxJqhYzFI56xaSbbg8tj8RFcb2dlo8X1yfWLxegCZbxC/7hA==
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
@@ -3333,9 +3343,9 @@ decamelize@^2.0.0:
     xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-equal@^1.0.1:
   version "1.0.1"
